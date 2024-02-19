@@ -1,17 +1,19 @@
-Feature: Login Page Dafbin
+Feature: Login Page Puma
 
-Scenario: Success Login
+Scenario: Positive Login
 Given I am on the login page
 When I fill my credentials
 And I click on the login button
-Then I should be on the home page
+Then I should be logged in
 
-Scenario: Invalid Login Email not registered
+Scenario: Negatice Login With Wrong Email
 Given I am on the login page
-When I fill wrong email
+When I fill the wrong email
 And I click on the login button
+And I should be not logged in
 
-Scenario: Invalid Login wrong password
+Scenario: Negatice Login With Wrong Password
 Given I am on the login page
-When I fill wrong password
+When I fill the wrong password
 And I click on the login button
+And I should be not logged in
