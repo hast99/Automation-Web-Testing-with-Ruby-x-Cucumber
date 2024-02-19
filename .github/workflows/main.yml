@@ -1,6 +1,6 @@
-name : Automation Web Testing with Ruby x Cucumber
-on : [push, pull_request]
-job : 
+name: Automation Web Testing with Ruby x Cucumber
+on: [push, pull_request]
+jobs: 
   build: 
    runs-on: ubuntu-latest
    steps: 
