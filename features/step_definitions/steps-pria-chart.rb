@@ -8,7 +8,6 @@ end
 When('I check out chart pria') do
   find(:xpath, '//*[@id="page"]/div[3]/div[3]/div[1]/div[2]/div/div[9]/div/div[2]/button').click
   find(:xpath, '//*[@id="addToBagOverlay"]/div/div/div/div/div[3]/div[1]/a').click
-  # find(:xpath, '//*[@id="addToBagOverlay"]/div/div/div/div/div[3]/div[2]/a').click Lihat Keranjang
 end
 
 Then('I payment chart pria') do
