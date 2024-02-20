@@ -13,14 +13,19 @@ jobs:
     - name: Chrome Install
       uses: browser-actions/setup-chrome@latest
       with:
-        chrome-version: latest
+        chrome-version: latest # Menggunakan versi Chrome terbaru yang tersedia di GitHub Actions
 
-    - name: Chromedriver Install
+    - name: Get Chromedriver Version
       run: |
         LATEST_CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
-        wget "https://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+        echo "Latest Chromedriver Version: $LATEST_CHROMEDRIVER_VERSION"
+
+    - name: Install Chromedriver
+      run: |
+        wget "https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
         unzip chromedriver_linux64.zip
-        sudo mv chromedriver /usr/bin/
+        sudo mv chromedriver /usr/local/bin/
+        chromedriver --version
 
     - name: Bundle Install
       run: bundle install
@@ -28,6 +33,4 @@ jobs:
     - name: Run Cucumber Test
       run: |
         google-chrome --version
-        chromedriver --version
-        
         HEADLESS=true bundle exec cucumber
