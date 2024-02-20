@@ -13,11 +13,12 @@ jobs:
     - name: Chrome Install
       uses: browser-actions/setup-chrome@latest
       with:
-        chrome-version: stable
+        chrome-version: latest
 
     - name: Chromedriver Install
       run: |
-        wget "https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip"
+        LATEST_CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+        wget "https://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
         unzip chromedriver_linux64.zip
         sudo mv chromedriver /usr/bin/
 
@@ -26,7 +27,7 @@ jobs:
 
     - name: Run Cucumber Test
       run: |
-        chrome --version
+        google-chrome --version
         chromedriver --version
         
         HEADLESS=true bundle exec cucumber
