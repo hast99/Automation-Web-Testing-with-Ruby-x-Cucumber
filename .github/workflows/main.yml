@@ -24,7 +24,7 @@ jobs:
       run: |
         wget "https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
         unzip chromedriver_linux64.zip
-        sudo mv chromedriver /usr/local/bin/
+        sudo mv chromedriver /usr/bin/
         chromedriver --version
 
     - name: Bundle Install
