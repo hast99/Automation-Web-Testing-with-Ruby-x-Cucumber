@@ -30,3 +30,4 @@ jobs:
         chromedriver --version
         
         HEADLESS=true bundle exec cucumber
+        
