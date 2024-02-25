@@ -13,7 +13,7 @@ jobs:
     - name: Chrome Install
       uses: browser-actions/setup-chrome@latest
       with:
-        chrome-version: stable
+        chrome-version: 114.0.5735.133
 
     - name: Chromedriver Install
       run: |
