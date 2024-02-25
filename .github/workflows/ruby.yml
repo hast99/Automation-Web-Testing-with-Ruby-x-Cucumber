@@ -26,7 +26,7 @@ jobs:
 
     - name: Run Cucumber Test
       run: |
-        chrome --version
+        google-chrome --version
         chromedriver --version
         
         HEADLESS=true bundle exec cucumber
