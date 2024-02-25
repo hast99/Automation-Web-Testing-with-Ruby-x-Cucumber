@@ -11,7 +11,7 @@ jobs:
         ruby-version: 3.1.4
 
     - name: Chrome Install
-      uses: browser-actions/setup-chrome@latest
+      uses: browser-actions/setup-chrome@114.0.5735.133
       with:
         chrome-version: 114.0.5735.133
 
